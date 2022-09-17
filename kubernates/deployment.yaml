@@ -1,0 +1,36 @@
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rainfall
+  namespace: default
+  labels:
+    app: rainfall
+spec:
+  selector:
+    matchLabels:
+      app: rainfall
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: rainfall
+    spec:
+      containers:
+      - name: rainfall
+        image: ruum/rainfall:latest
+        env:
+        - name: URL
+          valueFrom:
+            configMapKeyRef:
+              name: rainfall
+              key: URL
+          name: LOCNAME
+          valueFrom:
+            configMapKeyRef:
+              name: rainfall
+              key: LOCNAME
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

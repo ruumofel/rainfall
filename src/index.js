@@ -1,4 +1,3 @@
-
 require('dotenv').config()
 const express = require('express')
 const app = express()
@@ -14,4 +13,3 @@ app.get('/', (req, res, body) => {
 app.listen(port, () => {
   console.log(`Rainfall Service started`)  
 })
-
