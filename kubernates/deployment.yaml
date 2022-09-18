@@ -21,16 +21,16 @@ spec:
       - name: rainfall
         image: ruum/rainfall:latest
         env:
-        - name: URL
-          valueFrom:
-            configMapKeyRef:
-              name: rainfall
-              key: URL
-          name: LOCNAME
+        - name: LOCNAME
           valueFrom:
             configMapKeyRef:
               name: rainfall
               key: LOCNAME
+        - name: HOSTURL
+          valueFrom:
+            configMapKeyRef:
+              name: rainfall
+              key: HOSTURL
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

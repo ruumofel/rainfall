@@ -4,5 +4,6 @@ metadata:
   name: rainfall
   namespace: default
 data:
-  URL: https://api.data.gov.sg/v1/environment/rainfall/
+  HOSTURL: "https://api.data.gov.sg/v1/environment/rainfall/"
   LOCNAME: "Marina Gardens Drive"
+  
